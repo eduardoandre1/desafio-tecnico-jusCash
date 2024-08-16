@@ -17,24 +17,30 @@ export default function RegisterPage() {
     const context:ServerType = useContext(ServerPovider)
     
     
-    async function SendRegister(name:string,email: string, password: string,confirmPassword: string){
+    function SendRegister(name:string,email: string, password: string,confirmPassword: string){
         const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        alert(regex.test(password));
         if(name==''){
             Swal.fire({title:"Precisar colocar um nome",
                 icon: 'error'
             })
+            return ''
         }
         if(email==''){
             Swal.fire({
                 title: 'precisar ter um email válido',
                 icon: 'error'
             })
+            return ''
         }
-        if(!regex.test(password)|| password==''){
-            Swal.fire({title: 'Senha precisa ser mais forte',
+        if(regex.test(password)===false){
+            alert('Please enter');
+            Swal.fire({
+                title: 'Senha precisa ser mais forte',
                 text: ' deve possuir ao menos 8 caracteres, contendo ao menos, um caracter especial, um caracter numérico, um caracter alfanumérico',
                 icon: 'error',
                 confirmButtonText: 'OK'})
+            return ''
         }
         if(password !== confirmPassword){
             Swal.fire({
@@ -43,7 +49,6 @@ export default function RegisterPage() {
                 confirmButtonText: 'OK'
             })
         }
-    else {
         context.setEmail(email)
         context.setPassword(password)
         Swal.fire({
@@ -52,7 +57,6 @@ export default function RegisterPage() {
             confirmButtonText: 'OK'
         })
         navigate('/login')
-    }
 
 
     }
