@@ -4,11 +4,11 @@ import logo from "../../assets/image.png"
 import LeadType from "../../types/Lead.type";
 import LeadForm from "../componets/Lead";
 import ApiServerList from "../../serverDatabase";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function LeadsPage() {
-    const [Lead, setLead] = useState(undefined)
-    const [disabled,setDisabled] = useState(false)
+    const [Lead] = useState(undefined)
+    const [disabled] = useState(false)
     const [open,setOpen] = useState(false)
     function CreateLeadList(lead: LeadType) {
         const LeadRow = { clientePotencial:<td></td>,dadosConfirmados:<td></td>,analiseDeLead:<td></td> }
@@ -25,7 +25,7 @@ export default function LeadsPage() {
         //<LeadForm Lead={lead} open={false}/>
         return (
             <>
-                <tr onClick={() =>{setLead(lead);console.log(lead),setDisabled(true)}} >
+                <tr onClick={() =>{console.log(lead)}} >
                     {LeadRow.clientePotencial}
                     {LeadRow.dadosConfirmados}
                     {LeadRow.analiseDeLead}

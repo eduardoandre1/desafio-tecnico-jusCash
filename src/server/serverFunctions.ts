@@ -1,4 +1,4 @@
-import ServerPovider from "../server.provider";
+//import ServerPovider from "../server.provider";
 
-const context = useContext(ServerPovider)
+//const context = useContext(ServerPovider)
 

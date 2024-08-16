@@ -94,6 +94,7 @@ export default function LeadForm(LeadBlock: { Lead: LeadType | undefined , open:
                         </div>
 
                     </form>
+                    <button onClick={()=> SendLead(leadInput)}></button>
                 </div>
             </div>
         </LeadFormStyle>
