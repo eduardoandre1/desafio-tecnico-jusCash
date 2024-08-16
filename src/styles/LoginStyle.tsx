@@ -7,7 +7,7 @@ width: 100dvw;
 display: flex;
 flex-direction: column;
 
-form{
+.form{
     height: 80dvh;
     max-width: 600px;
     display: flex;
@@ -52,7 +52,7 @@ input{
 p{
     width: 100%;
     text-align: end;
-    color: darkblue;
+    color: #001E5E;
 
 }
 span{
@@ -65,7 +65,7 @@ label{
 }
 .Submit{
     all:unset;
-    background-color: lightgreen;
+    background-color: #28BE60;
     border-radius: 2px;
     color: white;
     font-size: 1rem;
@@ -77,11 +77,13 @@ label{
     height: 5%;
 }
 h1{
-    font-size: 7rem;
+    font-size: 5rem;
     height: 100%;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     display: flex;
+    color: #001E5E;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 img{
     height: 50%;
