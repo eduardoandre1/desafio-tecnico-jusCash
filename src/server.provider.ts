@@ -7,6 +7,8 @@ export interface ServerType
 	setEmail: (value: string) => void;
 	password: string;
 	setPassword: (value: string) => void;
+	name: string;
+	setName: (value: string) => void;
 	Leads:LeadType[];
 }
 const ServerPovider = createContext(<ServerType>({}))

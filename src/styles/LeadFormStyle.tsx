@@ -35,7 +35,7 @@ h4{
     margin-top: 1rem;
     
 }
-button{
+.buttonClose{
     all: unset;
     position: absolute;
     right: 7px;
@@ -45,7 +45,7 @@ button{
     justify-content: center;
     align-items: center;
 }
-button:hover{
+.buttonClose:hover{
     background-color: darkred;
 }
 form{
@@ -63,6 +63,45 @@ p{
     font-size: 1rem;
     font-style: oblique;
     margin-bottom: 0.5rem;
+}
+.buttonsBotton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .cancel{
+        all:unset;
+        background-color: white;
+        color: gray;
+        border: 2px solid gray;
+        border-radius: 2px;
+        margin-right: 20px;
+        padding: 5px;
+        width: max-content;
+        width: 15%;
+        text-align: center;
+        }
+    .save{
+        all:unset;
+        background-color: #2896BC;
+        color: white;
+        padding: 5px;
+        min-width:max-content;
+        width: 15%;
+        text-align: center;
+    }
+    .save:disabled{
+        background-color: gray;
+        color: white;
+    }
+    .cancel:disabled{
+        background-color: gray;
+        color: white;
+    }
+
 }
 `
 export default LeadFormStyle

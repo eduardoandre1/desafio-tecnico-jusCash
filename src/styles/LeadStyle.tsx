@@ -8,23 +8,15 @@ const LeadStyle = styled.div`
  margin-top: 60px;
  align-items: center;
  align-content: center;
-.flex-start{
-    justify-content: flex-start;
-}
-.center{
-    justify-content: center;
-    display: flex;
-}
-.flex-end{
-    justify-content: flex-end;
-}
  .title{
     display: flex;
-    width: 100%;
-    justify-content: center;
+    width: 60dvw;
+    justify-content: flex-start;
     height: 15%;
  }
-
+ .logo{
+    width: 95%;
+ }
  .button{
     all: unset;
     background-color: #2797B9;
@@ -38,31 +30,35 @@ const LeadStyle = styled.div`
  .button:hover{
     transform: scale(1.4);
  }
-
-h2{
-    font-size: 4rem;
-    height: 100%;
-    align-items: flex-end;
-    justify-content: center;
-    display: flex;
-    color: #001E5E;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- }
  .space{
-    width: 80dvw;
+    width: 60dvw;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-bottom: 2%;
     padding-top: 2%;
  }
+ 
+ .selectCell{
+    cursor: grab;
+    span:hover{
+    text-decoration: underline;
+    color: #001E5E;
+    z-index: 3;
+    }
+ }
  table {
-    width: 80dvw;
+    width: 60dvw;
+    border: 2px solid #ddd;
+    .withoutBorder{
+        border: transparent
+    }
         }
         th, td {
-            border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            
+            
         }
         th {
             background-color: #f2f2f2;
@@ -70,6 +66,7 @@ h2{
             grid-column: auto;
             justify-content: center;
             display: flex;
+            
 
         }
         tr:nth-child(even) {
@@ -80,6 +77,9 @@ h2{
         }
         tr{
             width: 100%;
+        }
+        .tdTitle{
+            border: 2px solid #ddd;
         }
 `
 export default LeadStyle

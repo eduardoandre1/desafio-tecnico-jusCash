@@ -1,6 +1,7 @@
 import { useState } from "react"
 import MenuStyle from "./../../styles/menuStyle"
 import {Link} from "react-router-dom"
+import logo from "../../assets/logoDark.png"
 
 
 export default  function Menu(){
@@ -20,7 +21,7 @@ export default  function Menu(){
         <MenuStyle>
             <div className="menu">
                 <div className="logo">
-                <h1> JustCash</h1>
+                <img src={logo} alt="logoin dark mode" />
                 </div>
                 <ol className={navbar}>
                     <li>

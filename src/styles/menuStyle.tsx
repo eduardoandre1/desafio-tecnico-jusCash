@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MenuStyle = styled.header`
 width: 100dvw ;
-background: #010028;
+background: #072854;
 position: fixed;
 z-index: 15;
 top: 0;
@@ -24,10 +24,7 @@ h1{
 img {
   height:2.5em;
   width: min-content;
-  border-radius: 50%;
   overflow: hidden;
-  border-style: groove;
-  border: 3px solid lightblue;
 }
 
 .menu {
@@ -89,7 +86,7 @@ li a{
     right: 0;
 
     flex-direction: column;
-    background-color: black;
+    background-color: #072854;
     box-shadow: rgb(0 0 0 / 75%) 0px 13px 30px -12px;
     gap: 0;
     z-index: -1;

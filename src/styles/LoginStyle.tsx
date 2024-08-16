@@ -5,8 +5,23 @@ height: max-content;
 min-height: 100dvh;
 width: 100dvw;
 display: flex;
+justify-content: flex-start;
 flex-direction: column;
-
+align-items: center;
+align-content: center;
+.title{
+    display: flex;
+    max-width: 600px;
+    width: 60dvw;
+    justify-content: center;
+    align-items: center;
+    height: 20dvh;
+    margin-bottom: 1.5rem;
+ }
+ .logo{
+    width: 100%;
+    height: 100%;
+ }
 .form{
     height: 80dvh;
     max-width: 600px;
@@ -84,17 +99,6 @@ h1{
     display: flex;
     color: #001E5E;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-img{
-    height: 50%;
-}
-div{
-    height: 15dvh;
-    width: 100dvw;
-    justify-content: center;
-    align-items: end;
-    display: flex;
-    margin-bottom: 10dvh;
 }
 `
 

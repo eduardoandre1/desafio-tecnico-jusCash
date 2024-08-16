@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import LoginStyle from "../styles/LoginStyle"
 import { Link, useNavigate } from "react-router-dom"
-import logo from "./../assets/image.png"
+import logo from "./../assets/logoLight.png"
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import ServerPovider,{ServerType} from "../server.provider";
@@ -39,7 +39,7 @@ export default function LoginPage() {
     }
     return (
         <LoginStyle>
-            <div className="title"><img src={logo} alt="clock with money'slogo" /><h1>JustCash</h1></div>
+            <div className="title"><img src={logo} alt="clock with money'slogo" /></div>
             <div className="form">
                 <div className="inputBlock">
                     <label htmlFor="email">Email:<span>*</span></label>

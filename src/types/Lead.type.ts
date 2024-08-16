@@ -9,3 +9,7 @@ export default interface LeadType {
 	honoráriosDativos: boolean,
 	CreditoDoAutor: boolean
 }
+export interface typesLead 
+{
+	type: 'Cliente Potencial' | 'Dados Confirmados' | 'Analise de Lead'
+}

@@ -3,10 +3,11 @@ import LeadType from "../../types/Lead.type";
 import LeadFormStyle from "../../styles/LeadFormStyle";
 import ServerPovider from "../../server.provider";
 import React from "react";
+import { LeadFormType } from "../../types/LeadForm.type";
+import Swal from "sweetalert2";
 
-export default function LeadForm(LeadBlock: { Lead: LeadType | undefined , open: boolean, disabled: boolean }) {
-    const { Lead , disabled } = LeadBlock
-    const [isOpen, setIsOpen] = useState(LeadBlock.open === true ? 'overflow' : 'overflow close')
+export default function LeadForm(LeadForm:LeadFormType) {
+    const { Lead , disabled ,open,setOpen } = LeadForm
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [tel, setTel] = useState('')
@@ -17,7 +18,6 @@ export default function LeadForm(LeadBlock: { Lead: LeadType | undefined , open:
         honorariosDativos: true,
         CreditoDoAutor: true
     })
-
     const leadInput: LeadType = {
         name: name,
         email: email,
@@ -31,8 +31,13 @@ export default function LeadForm(LeadBlock: { Lead: LeadType | undefined , open:
     }
 
     const context = useContext(ServerPovider)
-    async function SendLead(Lead: LeadType) {
+    function SendLead(Lead: LeadType) {
         context.Leads.push(Lead)
+        Swal.fire({
+            title: "salvando no banco de dados",
+            timer: 800,
+            icon: "success"
+        })
     }
     function changeCheckAll() {
         setCheck({
@@ -50,13 +55,12 @@ export default function LeadForm(LeadBlock: { Lead: LeadType | undefined , open:
             todos: false,
             [name]: checked,
         }))
-        console.log(check)
     }
     return (
         <LeadFormStyle>
-            <div className={isOpen}>
+            <div className={open?'overflow':'overflow close'}>
                 <div className="LeadForm">
-                    <button  onClick={()=>setIsOpen('overflow close')}>X</button>
+                    <button className="buttonClose" onClick={()=>setOpen(false)}>X</button>
                     <h3 className="titleForm">Lead</h3>
                     <form>
                         <h4>Dados do Lead</h4>
@@ -76,7 +80,7 @@ export default function LeadForm(LeadBlock: { Lead: LeadType | undefined , open:
                             <label htmlFor="todos">Todos</label>
                         </div>
                         <div className="checkInput">
-                            <input type="checkbox" id="honorariosSucumbenciais" name="honorariosSucumbenciais" checked={Lead?Lead.honoráriosSucumbenciais:check.honorariosSucumbenciais} disabled={LeadBlock.disabled} onChange={(event) => { changeCheckOne(event) }} />
+                            <input type="checkbox" id="honorariosSucumbenciais" name="honorariosSucumbenciais" checked={Lead?Lead.honoráriosSucumbenciais:check.honorariosSucumbenciais} disabled={disabled} onChange={(event) => { changeCheckOne(event) }} />
                             <label htmlFor="honorariosSucumbenciais">Honorários Sucumbenciais</label>
                         </div>
                         <div className="checkInput">
@@ -89,12 +93,15 @@ export default function LeadForm(LeadBlock: { Lead: LeadType | undefined , open:
                         </div>
 
                         <div className="checkInput">
-                            <input type="checkbox" checked={Lead?Lead.CreditoDoAutor:check.CreditoDoAutor} id="CreditoDoAutor"   name="CreditoDoAutor" disabled={LeadBlock.disabled} onChange={(event) => { changeCheckOne(event) }} />
+                            <input type="checkbox" checked={Lead?Lead.CreditoDoAutor:check.CreditoDoAutor} id="CreditoDoAutor"   name="CreditoDoAutor" disabled={disabled} onChange={(event) => { changeCheckOne(event) }} />
                             <label htmlFor="CreditoDoAutor">Crédito Do Autor</label>
                         </div>
 
                     </form>
-                    <button onClick={()=> SendLead(leadInput)}></button>
+                    <div className="buttonsBotton">
+                        <button className="cancel" disabled={disabled} onClick={()=>setOpen(false)}>Cancelar</button>
+                        <button className="save" disabled={disabled} onClick={()=> {SendLead(leadInput);setOpen(false)}}>Salvar</button>
+                    </div>
                 </div>
             </div>
         </LeadFormStyle>

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import LoginStyle from "../styles/LoginStyle"
 import { Link, useNavigate } from "react-router-dom"
-import logo from "./../assets/image.png"
+import logo from "./../assets/logoLight.png"
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2'
@@ -19,7 +19,6 @@ export default function RegisterPage() {
     
     function SendRegister(name:string,email: string, password: string,confirmPassword: string){
         const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-        alert(regex.test(password));
         if(name==''){
             Swal.fire({title:"Precisar colocar um nome",
                 icon: 'error'
@@ -48,7 +47,9 @@ export default function RegisterPage() {
                 icon: 'error',
                 confirmButtonText: 'OK'
             })
+            return''
         }
+        context.setName(name)
         context.setEmail(email)
         context.setPassword(password)
         Swal.fire({
@@ -63,7 +64,7 @@ export default function RegisterPage() {
 
     return (
         <LoginStyle>
-            <div><img src={logo} alt="clock with money'slogo" /><h1>JustCash</h1></div>
+            <div className="title"><img className="logo" src={logo} alt="Logo" /></div>
             <div className="form">
                 <div className="inputBlock">
                     <label htmlFor="name">Seu nome completo:<span>*</span></label>
