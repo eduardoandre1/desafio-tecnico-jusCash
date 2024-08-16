@@ -62,7 +62,6 @@ export default function LeadsPage() {
         
     useEffect(() =>{Swal.fire({
         title:`Seja Bem vindo(a) ${context.name}`,
-        imageUrl: {logo},
         position: "top",
     })},[])
     return (

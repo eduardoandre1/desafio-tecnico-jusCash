@@ -93,6 +93,7 @@ só simular a resposta do banco de dados
 basta repetir os valores colocados 
 
 ### página 'Leads
+![alt text](image-15.png)
 antes de tudo assumi que o formato json do banco de dados das Leads foi 
 ```js
 export default interface LeadType {
@@ -107,12 +108,14 @@ export default interface LeadType {
 	CreditoDoAutor: boolean
 }
 
-/// esta tipagem foi feita para poder criar a mudança de valores entre colunas limintando os valores para não chash a página
+/// a tipagem deste objeto foi feita para poder criar a mudança de valores entre colunas limintando os valores para não crash a página
 export interface typesLead 
 {
 	type: 'Cliente Potencial' | 'Dados Confirmados' | 'Analise de Lead'
 }
 ```
+
+
 
 
 
