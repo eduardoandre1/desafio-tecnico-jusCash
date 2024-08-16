@@ -6,6 +6,7 @@ import LoginPage from './pages/Login';
 import ServerPovider from './server.provider';
 import LeadsPage from './pages/Leads/LeadPage';
 import LeadType from './types/Lead.type';
+import VideoBlock from './pages/extras.Page';
 
 function App() {
   const [email, setEmail] = useState('')
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<RegisterPage />} />
           <Route path='/Login' element={<LoginPage />} />
           <Route path='/Leads' element={<LeadsPage />} />
+          <Route path='/extra' element={<VideoBlock />} />
         </Routes>
       </BrowserRouter>
       </ServerPovider.Provider>

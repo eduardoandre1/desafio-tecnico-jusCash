@@ -71,6 +71,7 @@ export default function LeadsPage() {
             <div className="title"><img className="logo" src={logo} alt="clock with money's logo" /></div>
             <div className="space">
                 <button className="button" onClick={()=>{setOpen(true);setLead(undefined);setDisabled(false)}}>+ Nova Lead </button>
+                <button className="mobileButton"  onClick={()=>{setOpen(true);setLead(undefined);setDisabled(false)}}>+</button>
             </div>
             <table>
                 <tr>

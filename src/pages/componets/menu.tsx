@@ -39,8 +39,8 @@ export default  function Menu(){
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/contatos"}>
-                        Contatos
+                        <Link to={"/extra"}>
+                        EXTRA
                         </Link>
                     </li>
                 </ol>

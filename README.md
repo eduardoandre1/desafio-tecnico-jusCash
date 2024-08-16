@@ -114,6 +114,11 @@ export interface typesLead
 	type: 'Cliente Potencial' | 'Dados Confirmados' | 'Analise de Lead'
 }
 ```
+## Pagina extra só algo que eu quiz fazer 
+## Posponsivideade mobile
+- formatei a pagina para que possa ser lida por celular
+![alt text](image-16.png) 
+![alt text](image-17.png)
 
 
 

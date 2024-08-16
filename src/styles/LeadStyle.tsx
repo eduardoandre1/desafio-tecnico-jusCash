@@ -57,6 +57,7 @@ const LeadStyle = styled.div`
         th, td {
             padding: 8px;
             text-align: left;
+
             
             
         }
@@ -81,5 +82,44 @@ const LeadStyle = styled.div`
         .tdTitle{
             border: 2px solid #ddd;
         }
+    .mobileButton{
+        display: none;
+    }
+    @media(max-width:700px) {
+        padding-top: 60px;
+        .button {
+            display: none;
+        }
+        table{
+            width: 90dvw;
+            th, td {
+            font-size: 5dvw;
+
+            
+            
+        }
+        }
+        .mobileButton{
+            display: flex;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background: #072854;
+            color: white;
+            margin-bottom: 8dvh;
+            margin-right: 10dvw;
+            width: 15dvw;
+            height: 15dvw;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 2rem;
+
+
+
+        }
+    }
+
+    }
 `
 export default LeadStyle

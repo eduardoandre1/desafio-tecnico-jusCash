@@ -101,7 +101,11 @@ p{
         background-color: gray;
         color: white;
     }
-
+}
+@media(max-width:768px){
+    .LeadForm{
+        width: 80%;
+    }
 }
 `
 export default LeadFormStyle
